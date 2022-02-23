@@ -2,6 +2,8 @@ const { resolve } = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const DotEnv = require("dotenv-webpack");
+const WasmPackPlugin = require("@wasm-tool/wasm-pack-plugin");
+const path = require("path");
 
 const environment = process.env.NODE_ENV;
 
@@ -30,7 +32,7 @@ config = {
 					{
 						loader: 'url-loader',
 						options: {
-							limit: 10000
+							limit: 10000,
 						},
 					},
 				],
@@ -57,7 +59,13 @@ config = {
 			silent: false,
 			defaults: false,
 		}),
+		new WasmPackPlugin({
+			crateDirectory: path.resolve(__dirname, "./src/wasm"),
+		}),
 	],
+	experiments: {
+		asyncWebAssembly: true
+	}
 };
 
 switch(environment) {
