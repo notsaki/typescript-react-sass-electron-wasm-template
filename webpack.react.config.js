@@ -13,7 +13,7 @@ config = {
 	mode: environment,
 	entry: resolve(__dirname, "./src/index.tsx"),
 	output: {
-		path: resolve(__dirname, "../dist"),
+		path: resolve(__dirname, "./dist"),
 		filename: "bundle.js",
 	},
 	resolve: {

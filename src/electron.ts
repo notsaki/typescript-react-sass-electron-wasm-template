@@ -15,7 +15,7 @@ async function createWindow() {
 	if(environment === "development") {
 		await window.loadURL("http://localhost:3000/");
 	} else {
-		await window.loadFile(`file://${path.join(__dirname, "../src", "index.html")}`);
+		await window.loadFile(`file://${path.join("../dist", "index.html")}`);
 	}
 }
 
