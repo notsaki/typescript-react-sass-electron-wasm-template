@@ -1,4 +1,5 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
+import "./app.scss";
 
 export default function App(): JSX.Element {
 	const [title, setTitle] = useState("");
@@ -11,12 +12,14 @@ export default function App(): JSX.Element {
 	}, []);
 
 	return (
-		<div>
+		<div className={"app"}>
 			<h3>{title}</h3>
 			<span>{counter}</span>
 			<br />
-			<button onClick={() => setCounter(counter - 1)}>Decrease</button>
-			<button onClick={() => setCounter(counter + 1)}>Increase</button>
+			<div className={"actions"}>
+				<button onClick={() => setCounter(counter - 1)}>Decrease</button>
+				<button onClick={() => setCounter(counter + 1)}>Increase</button>
+			</div>
 		</div>
 	);
 }

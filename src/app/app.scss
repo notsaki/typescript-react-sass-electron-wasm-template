@@ -1,0 +1,29 @@
+$primary: #d81b60;
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 200px;
+  font-family: Roboto, sans-serif;
+
+  .actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  button {
+    border: unset;
+    cursor: pointer;
+    background: $primary;
+    color: white;
+    padding: 10px;
+
+    &:active {
+      background: darken($primary, 5%);
+    }
+  }
+}
