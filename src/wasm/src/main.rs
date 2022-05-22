@@ -8,6 +8,6 @@ pub fn greet_from_rust() -> String {
 }
 
 #[wasm_bindgen]
-pub fn test() -> String {
-    "Test".to_string()
+pub fn test(value: String) -> String {
+    value
 }
