@@ -7,7 +7,7 @@
 		"react:dev": "NODE_ENV=development webpack serve --config webpack.react.config.js --port 3000",
 		"react:build": "NODE_ENV=production webpack --config webpack.react.config.js",
 		"electron:dev": "NODE_ENV=development webpack --config webpack.electron.config.js --mode development && electron .",
-		"electron:prod": "NODE_ENV=production webpack --config webpack.electron.config.js --mode production && electron .",
+		"electron:prod": "yarn react:build && NODE_ENV=production webpack --config webpack.electron.config.js --mode production && electron .",
 		"wasm:build": "cd ./src/wasm && wasm-pack build --out-dir ../../wasm-build && yarn wasm:update",
 		"wasm:update": "yarn upgrade wasm"
 	},
