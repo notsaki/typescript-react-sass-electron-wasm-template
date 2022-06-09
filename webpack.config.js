@@ -2,7 +2,6 @@ const { resolve } = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const DotEnv = require("dotenv-webpack");
-const WasmPackPlugin = require("@wasm-tool/wasm-pack-plugin");
 const path = require("path");
 
 const environment = process.env.NODE_ENV;
@@ -17,7 +16,7 @@ config = {
 		filename: "bundle.js",
 	},
 	resolve: {
-		extensions: [".wasm", ".mjs", ".js", ".jsx", ".ts", ".tsx", ".json"],
+		extensions: [".mjs", ".js", ".jsx", ".ts", ".tsx", ".json"],
 	},
 	module: {
 		rules: [
@@ -58,9 +57,6 @@ config = {
 			allowEmptyValues: false,
 			silent: false,
 			defaults: false,
-		}),
-		new WasmPackPlugin({
-			crateDirectory: path.resolve(__dirname, "./src/wasm"),
 		}),
 	],
 	experiments: {
