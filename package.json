@@ -37,7 +37,7 @@
 		"@wasm-tool/wasm-pack-plugin": "^1.6.0",
 		"babel-loader": "^8.2.3",
 		"css-loader": "^6.5.1",
-		"electron": "^18.2.4",
+		"electron": "^18.3.7",
 		"file-loader": "^6.2.0",
 		"html-webpack-plugin": "^5.5.0",
 		"node-sass": "^7.0.0",
